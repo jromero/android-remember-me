@@ -29,17 +29,17 @@ public class ListFragment extends Fragment {
 		mListView = (ListView) view.findViewById(R.id.list_view);
 
 		mPeople = new ArrayList<Person>();
-		mPeople.add(new Person("John", "Wow", null));
-		mPeople.add(new Person("Jimmy", "Great", null));
-		mPeople.add(new Person("Jerry", "Guy", null));
-		mPeople.add(new Person("Greg", "What", null));
-		mPeople.add(new Person("Bill", "", null));
-		mPeople.add(new Person("Bob", "", null));
-		mPeople.add(new Person("Brian", "", null));
-		mPeople.add(new Person("Bow", "", null));
-		mPeople.add(new Person("Tom", "", null));
-		mPeople.add(new Person("Lucy", "", null));
-		mPeople.add(new Person("Spock", "", null));
+		mPeople.add(new Person(1, "John", "Wow", null));
+		mPeople.add(new Person(2, "Jimmy", "Great", null));
+		mPeople.add(new Person(3, "Jerry", "Guy", null));
+		mPeople.add(new Person(4, "Greg", "What", null));
+		mPeople.add(new Person(5, "Bill", "", null));
+		mPeople.add(new Person(6, "Bob", "", null));
+		mPeople.add(new Person(7, "Brian", "", null));
+		mPeople.add(new Person(8, "Bow", "", null));
+		mPeople.add(new Person(9, "Tom", "", null));
+		mPeople.add(new Person(10, "Lucy", "", null));
+		mPeople.add(new Person(11, "Spock", "", null));
 
 		mAdapter = new PersonAdapter(getActivity(), mPeople);
 		mListView.setAdapter(mAdapter);
