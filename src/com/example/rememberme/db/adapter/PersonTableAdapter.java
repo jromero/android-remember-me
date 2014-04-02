@@ -20,7 +20,7 @@ public class PersonTableAdapter {
 		
 		// put the value of id or null if less than or equal to zero so it can be created
 		cv.put(PersonTable.Column.ID.getColumnName(), 
-				person.getId() <= 0 ? null : person.getId());
+				person.getId() < 0 ? null : person.getId());
 		
 		cv.put(PersonTable.Column.NAME.getColumnName(), person.getName());
 		
@@ -42,6 +42,6 @@ public class PersonTableAdapter {
 		String name = cursor.getString(cursor.getColumnIndex(PersonTable.Column.NAME.getColumnName()));
 		String imageUri = cursor.getString(cursor.getColumnIndex(PersonTable.Column.IMAGE_URI.getColumnName()));
 		String notes = cursor.getString(cursor.getColumnIndex(PersonTable.Column.NOTES.getColumnName()));
-		return new Person(id, name, notes, Uri.parse(imageUri));
+		return new Person(id, name, notes, imageUri == null ? null : Uri.parse(imageUri));
 	}
 }
